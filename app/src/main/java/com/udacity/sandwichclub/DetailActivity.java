@@ -62,22 +62,22 @@ public class DetailActivity extends AppCompatActivity {
                 .load(sandwich.getImage())
                 .into(ingredientsIv);
 
-        mTvDescription.setText(sandwich.getDescription().isEmpty() ? "NA" : sandwich.getDescription());
+        mTvDescription.setText(sandwich.getDescription().isEmpty() ? getResources().getString(R.string.text_na) : sandwich.getDescription());
         if (sandwich.getIngredients().size() > 0) {
             for (String ingredients : sandwich.getIngredients()) {
                 mTvIngredients.append(ingredients + "\n");
             }
         } else {
-            mTvIngredients.setText("NA");
+            mTvIngredients.setText(getResources().getString(R.string.text_na));
         }
         if (sandwich.getAlsoKnownAs().size() > 0) {
             for (String alsoKnownAs : sandwich.getAlsoKnownAs()) {
                 mTvAlsoKnownAs.append(alsoKnownAs + "\n");
             }
         } else {
-            mTvAlsoKnownAs.setText("NA");
+            mTvAlsoKnownAs.setText(getResources().getString(R.string.text_na));
         }
-        mTvOrigin.setText(sandwich.getPlaceOfOrigin().isEmpty() ? "NA" : sandwich.getPlaceOfOrigin());
+        mTvOrigin.setText(sandwich.getPlaceOfOrigin().isEmpty() ? getResources().getString(R.string.text_na) : sandwich.getPlaceOfOrigin());
 
     }
 }
